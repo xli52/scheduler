@@ -5,12 +5,12 @@ import 'components/Appointment/styles.scss';
 import DayList from "./DayList";
 import Appointment from "./Appointment/Appointment";
 import { getAppointmentsForDay, getInterview } from "helpers/selectors";
+import { useVisualMode } from 'hooks/useVisualMode';
 
 export default function Application(props) {
   const [state, setState] = useState({ day: 'Monday', days: [], appointments: {}, interviewers: {} });
   const setDay = day => setState(prev => ({...prev, day}));
   const dailyAppointments = getAppointmentsForDay(state, state.day);
-
   useEffect(() => {
     Promise.all([
       axios.get('api/days'),
@@ -53,6 +53,7 @@ export default function Application(props) {
               id={appointment.id}
               time={appointment.time}
               interview={interview}
+              interviewers={state.interviewers}
             />
           );
         })}

@@ -7,8 +7,10 @@ export function getAppointmentsForDay(state, day) {
 
 export function getInterview(state, interview) {
   if (!interview) return null;
-  const interviewer = state.interviewers[interview.interviewer.toString()];
-  interview.interviewer = interviewer;
-  console.log(interview);
-  return interview;
+  console.log('interview: ', interview);
+  console.log('interviewer id: ', interview.interviewer);
+  const interviewer = state.interviewers[interview.interviewer];
+  const rebuildInterview = {...interview};
+  rebuildInterview.interviewer = interviewer;
+  return rebuildInterview;
 };
