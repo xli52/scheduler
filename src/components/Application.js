@@ -21,12 +21,26 @@ export default function Application(props) {
       ...state.appointments,
       [id]: appointment
     };
-    // console.log('appointments: ', appointments);
-    axios.put(`/api/appointments/${id}`, appointment)
-    .then(() => {
-      setState(prev => ({ ...prev, appointments }));
-    });
+    return axios.put(`/api/appointments/${id}`, appointment)
+      .then(() => {
+        setState(prev => ({ ...prev, appointments }));
+      })
   }
+
+  const cancelInterview = function (id) {
+    const appointment = {
+      ...state.appointments[id],
+      interview: null
+    };
+    const appointments = {
+      ...state.appointments,
+      [id]: appointment
+    };
+    return axios.delete(`api/appointments/${id}`)
+      .then(() => {
+        setState(prev => ({ ...prev, appointments }));
+      })
+  };
 
   useEffect(() => {
     Promise.all([
@@ -75,6 +89,7 @@ export default function Application(props) {
               interview={interview}
               interviewers={dailyInterviewers}
               bookInterview={bookInterview}
+              cancelInterview={cancelInterview}
             />
           );
         })}
