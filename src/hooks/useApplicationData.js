@@ -34,11 +34,12 @@ export default function useApplicationData() {
       ...state,
       appointments: newAppointments
     };
+
     updateSpots(newState);
     
     return axios.put(`/api/appointments/${id}`, newAppointment)
       .then(() => {
-        setState({...newState});
+        setState(newState);
       })
   }
 
@@ -55,11 +56,12 @@ export default function useApplicationData() {
       ...state,
       appointments: newAppointments
     };
+    
     updateSpots(newState);
 
     return axios.delete(`api/appointments/${id}`)
       .then(() => {
-        setState({...newState});
+        setState(newState);
       })
   };
 
