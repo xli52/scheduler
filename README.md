@@ -26,9 +26,9 @@ npm run storybook
 This app is build using HTML, CSS, JS, React, axios for the front-end, Node, Express,  and PostgreSQL for the back-end, storybook, JEST and Cypress for the testing.
 
 ## Final Product
-!["Screenshot of app view"](https://github.com/michaelli52/tweeter/blob/master/public/docs/desktop_screen.png?raw=true)
-!["Screenshot of hover over a interview"](https://github.com/michaelli52/tweeter/blob/master/public/docs/Toggle_new_tweet.gif?raw=true)
-!["Screenshot of add/edit a interview"](https://github.com/michaelli52/tweeter/blob/master/public/docs/Toggle_new_tweet.gif?raw=true)
+!["Screenshot of app view"](https://github.com/michaelli52/scheduler/blob/master/public/docs/app_view.png?raw=true)
+!["Screenshot of hover over a interview"](https://github.com/michaelli52/scheduler/blob/master/public/docs/hover_over_interview.png?raw=true)
+!["Screenshot of add/edit a interview"](https://github.com/michaelli52/scheduler/blob/master/public/docs/edit_or_add_interview.png?raw=true)
 
 ## Getting Started
 
